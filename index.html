@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="magraine">
+<head>
+<meta charset="ISO-8859-1">
+<title>Graine</title>
+<base href="/">
+<link href="app/style/style.css" rel="stylesheet" type="text/css" />
+<link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet" type="text/css" />
+<link href="node_modules/bootstrap-css-only/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script src="node_modules/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+<script src="node_modules/d3/build/d3.min.js"></script>
+<!-- inject:js -->
+<script src="/app/app.js"></script>
+<script src="/app/home/homeCtrl.js"></script>
+<script src="/app/home/rubrique1Ctrl.js"></script>
+<script src="/app/home/rubrique2Ctrl.js"></script>
+<script src="/app/home/rubrique3Ctrl.js"></script>
+<script src="/app/home/rubrique4Ctrl.js"></script>
+<!-- endinject -->
+<div class="container-fluid" ui-view></div>
+
+</body>
+</html>
