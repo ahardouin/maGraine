@@ -7,18 +7,10 @@ body {
 }
 
 .row {
-	margin: 0.1em;	
-	padding: 0.5em;
+	margin: 0.5em;	
+	padding: 1em;
 }
-
-
-.panel {
-
-}
-
-
-
-
+	
 /**************
 DRAG AND DROP
 **************/
