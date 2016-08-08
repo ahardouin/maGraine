@@ -18,33 +18,47 @@ var dist="./dist";
 var dist_app = "./dist/app";
 var img = "/img"
 
-gulp.task('default', function() {
-  // place code for your default task here
+/**
+ * Tâche default : appelle la tâche connect 
+ */	
+gulp.task('default', ['connect'], function() {
+
 });
 
+/**
+ * Tâche dist : construit l'application dans le repertoire dist
+ * depend des taches clean, copyRessources et build 
+ */
 // distribution de l'application pour mise en production
 gulp.task('dist', ['clean', 'copyRessources', 'build'], function() {
 	
 });
 
-// suppression du répertoire dist
+/**
+ * Tâche clean : supprime le repertoire dist 
+ */
 gulp.task('clean', function() {
 	return gulp.src(dist, {read: false})
     .pipe(clean());
 });
 
-//copie des ressources html dans le repertoire dist
+/**
+ * Tâche copyRessources : copie les fichiers html, les images
+ * dans le répertoire dist
+ */
 gulp.task('copyRessources', ['clean'], function() {
 	gulp.src(['./app/**/*.html']).pipe(gulp.dest(dist_app));
 	gulp.src(['./app/img/**/*.*']).pipe(gulp.dest(dist_app + img));
 });
 
-// concatene JS et CSS, minify CSS uglify JS et ajoute version
+/**
+ * Tâche build : concatene les js, css, minify les css, uglify le js,
+ * crée les fichiers map, ajoute un numero de version, met à jour les liens dans index.html
+ * et copie le tout dans le répertoire dist
+ * depend de la tache clean
+ */
 gulp.task('build', ['clean'], function() {
 	
-	var jsFilter = filter("**/*.js");
-	var cssFilter = filter("**/*.css");
-	 
 	return gulp.src('./index.html')
 	.pipe(useref())
 	.pipe(sourcemaps.init())
@@ -59,18 +73,30 @@ gulp.task('build', ['clean'], function() {
     ;
 });
 
+/**
+ * Tâche connect : sert l'application à l'adresse localhost:8080
+ * depend de la tache index
+ */
 gulp.task('connect', ['index'], function() {
   connect.server({
     livereload: true
   });
 });
 
+/**
+ * Tâche connect:watch : sert l'application à l'adresse localhost:8080
+ * et reload l'application si modification des fichiers html, css et js
+ * depend de la tache index
+ */
 gulp.task('connect:watch', ['index','watch'], function() {
   connect.server({
     livereload: true
   });
 });
 
+/**
+ * Tâche connect:dist : sert l'application du répertoire dist à l'adresse localhost:7777
+ */
 gulp.task('connect:dist', function() {
 	  connect.server({
 	    livereload: false,
@@ -79,6 +105,9 @@ gulp.task('connect:dist', function() {
 	  });
 	});
 
+/**
+ * Tâche index : injection des fichiers js et css du projet (pas des librairies)
+ */
 gulp.task('index', function () {
 	  var target = gulp.src('./index.html');
 	  // It's not necessary to read the files (will speed up things), we're only after their paths: 
@@ -87,22 +116,34 @@ gulp.task('index', function () {
 	    .pipe(gulp.dest('./'));
 	});
 
+/**
+ * Tâche watch : ecoute les modifications des fichiers html, css et js
+ */
 gulp.task('watch', function () {
   gulp.watch(['./app/**/*.html'], ['html']);
   gulp.watch(['./app/style/*.css'], ['css']);
   gulp.watch(['./app/**/*.js'], ['js']);
 });
 
+/**
+ * Tâche html : reload des fichiers html
+ */
 gulp.task('html', function () {
   gulp.src('./app/**/*.html')
     .pipe(connect.reload());
 });
 
+/**
+ * Tâche js : reload des fichiers js
+ */
 gulp.task('js', function () {
   gulp.src('./app/**/*.js')
     .pipe(connect.reload());
 });
 
+/**
+ * Tâche css : reload des fichiers css
+ */
 gulp.task('css', function () {
 	  gulp.src('./app/style/*.css')
 	    .pipe(connect.reload());
