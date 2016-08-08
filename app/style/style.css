@@ -1,5 +1,5 @@
 body {
-	background-color:#eee;	
+	background-color:#eef;	
 }
 
 H1 {
@@ -8,12 +8,12 @@ H1 {
 }
 
 H2 {
-	color: #666;
-	font-family: fantasy;
+	color: #2299ee;
+	font-family: arial;
 }
 
 .container-fluid {
-	background-color:#eee;
+	background-color:#eef;
 }
 
 .row {
