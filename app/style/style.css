@@ -2,6 +2,16 @@ body {
 	background-color:#eee;	
 }
 
+H1 {
+	color: #2299ee;	
+	font-weight: bold;
+}
+
+H2 {
+	color: #666;
+	font-family: fantasy;
+}
+
 .container-fluid {
 	background-color:#eee;
 }
