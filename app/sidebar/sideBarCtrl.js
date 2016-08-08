@@ -3,7 +3,14 @@
 	angular
     .module("magraine")
     .controller("SideBarCtrl", SideBarCtrl);
-
+	
+	/**
+	 * @function SideBarCtrl - Controlleur bare de navigation 
+	 * @param $scope
+	 * @param $controller
+	 * @param $location
+	 * @param $state
+	 */
 	function SideBarCtrl($scope, $controller, $location, $state) { 
 		var vm = this
 		
@@ -21,6 +28,11 @@
 		// functions
 		vm.isActive = isActiveLink;
 		
+		/**
+		 * @function isActiveLink
+		 * @param viewLocation
+		 * Fonction qui renvoit true si la page passée en parametre est active
+		 */
 		function isActiveLink(viewLocation) { 
 	        return viewLocation === $location.path();
 	    };
