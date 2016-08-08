@@ -1,0 +1,8 @@
+<div ng-controller="SideBarCtrl as vm">
+<ul class="nav nav-pills nav-stacked">
+  <li role="presentation" ng-class="{active: vm.isActive(vm.accueilUrl)}"><a ui-sref="{{vm.accueil}}">{{vm.accueilLabel}}</a></li>
+  <li role="presentation" ng-class="{active: vm.isActive(vm.dndNgIncludeUrl)}"><a ui-sref="{{vm.dndNgInclude}}">{{vm.dndNgIncludeLabel}}</a></li>
+  <li role="presentation" ng-class="{active: vm.isActive(vm.dndViewsUIRouterUrl)}"><a ui-sref="{{vm.dndViewsUIRouter}}">{{vm.dndViewsUIRouterLabel}}</a></li>
+</ul>	
+</div>
+	
