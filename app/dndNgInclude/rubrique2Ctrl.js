@@ -13,7 +13,6 @@
 		
 		
 		function createGraphique(){
-		console.log('toto');
 		d3.selectAll("g").remove();
 		
 			var width = 420,

@@ -1,4 +1,18 @@
-# maGraine
-projet test angular JS et librairies
+# AngularJs POCS
 
-### test pull whith GIT GUI
+Projet test angular JS et librairies :  
+Gestion des tâches avec GULP  
+Test de la libraire angular-ui-router  
+Test de la librairie angular-drag-and-drop-lists  
+
+## Clôner le projet avec GIT
+
+git clone https://github.com/ahardouin/maGraine.git
+
+## Installer les dépendances
+
+npm install
+
+## Servir le projet en local (localhost:8080) 
+
+gulp connect

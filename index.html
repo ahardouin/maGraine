@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="magraine">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Graine</title>
 <base href="/">
 <!-- build:css vendorCss.min.css -->
@@ -27,15 +27,26 @@
 <!-- build:js app.min.js -->
 <!-- inject:js -->
 <script src="/app/app.js"></script>
+<script src="/app/dndNgInclude/dndNgIncludeCtrl.js"></script>
+<script src="/app/dndNgInclude/rubrique1Ctrl.js"></script>
+<script src="/app/dndNgInclude/rubrique2Ctrl.js"></script>
+<script src="/app/dndNgInclude/rubrique3Ctrl.js"></script>
+<script src="/app/dndNgInclude/rubrique4Ctrl.js"></script>
+<script src="/app/dndNgInclude/rubrique5Ctrl.js"></script>
+<script src="/app/dndViewsUIRouter/dndViewsUIRouterCtrl.js"></script>
+<script src="/app/header/headerCtrl.js"></script>
 <script src="/app/home/homeCtrl.js"></script>
-<script src="/app/home/rubrique1Ctrl.js"></script>
-<script src="/app/home/rubrique2Ctrl.js"></script>
-<script src="/app/home/rubrique3Ctrl.js"></script>
-<script src="/app/home/rubrique4Ctrl.js"></script>
-<script src="/app/home/rubrique5Ctrl.js"></script>
+<script src="/app/sidebar/sideBarCtrl.js"></script>
 <!-- endinject -->
 <!-- endbuild -->
+<div class="container-fluid">
+<div class="row page-header" ng-include="'app/header/header.html'"></div>
+<div class="row">
+	<div class="col-lg-2" ng-include="'app/sidebar/sidebar.html'"></div>
+	<div class="col-lg-10" ui-view></div>
+</div>
 <div class="container-fluid" ui-view></div>
+</div>
 
 </body>
 </html>

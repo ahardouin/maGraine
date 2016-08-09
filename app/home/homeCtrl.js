@@ -6,21 +6,19 @@
 
 	function HomeCtrl($scope, $controller) { 
 		var vm = this;
-		//var rubrique2Ctrl = $controller("Rubrique2Ctrl",{$scope: $scope});
-		vm.models = {
-	        selected: null,
-	        lists: {"A": [{label: "Rubrique 1", include:"app/home/rubrique1.html"},
-	                      {label: "Rubrique 2", include:"app/home/rubrique4.html"}
-	                      ], 
-	                "B": [{label: "Rubrique 3", include:"app/home/rubrique3.html"},
-	                      {label: "Rubrique 4", include:"app/home/rubrique2.html"}]}
-	    };
-
-	    // Model to JSON for demo purpose
-	    $scope.$watch('vm.models', function(model) {
-	    	//rubrique2Ctrl.createGraphique();	
-	    	vm.modelAsJson = angular.toJson(model, true);
-	    }, true);
+		
+		// labels
+		vm.titreTachesGulp = "Tâches GULP du projet"
+		vm.texteTachesGulp = "Différentes tâches pour servir le projet, reloader les fichiers, distribuer le projet."	
+		vm.titreJscdoc3 = "Génération de la JSDOC";
+		vm.jsdoc3="La tâche gulp docGulpFile permet la génération de la documentation ";
+		vm.titreDndNgInclude = "Drag and Drop avec angular-drag-and-drop-lists";
+		vm.texteDndNgInclude = "Test de Drag and Drop avec librairie angular-drag-and-drop-lists. Les composants à déplacer sont intégrés avec NgInclude";
+		vm.dndNgIncludeLabel = "DND avec ng-include"; // lien vers page dnd ng include
+		
+		// champs
+		vm.dndNgInclude = "dndNgInclude"; // state
+		
 	}
 	
 })();

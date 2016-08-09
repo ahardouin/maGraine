@@ -1,9 +1,19 @@
 body {
-	background-color:#eee;	
+	background-color:#eef;	
+}
+
+H1 {
+	color: #2299ee;	
+	font-weight: bold;
+}
+
+H2 {
+	color: #2299ee;
+	font-family: arial;
 }
 
 .container-fluid {
-	background-color:#eee;
+	background-color:#eef;
 }
 
 .row {

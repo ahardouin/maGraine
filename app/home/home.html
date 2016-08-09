@@ -1,57 +1,32 @@
-<div class="row" ng-controller="HomeCtrl as vm">
+<div ng-controller="HomeCtrl as vm">
 
-<div class="row page-header">
-	<h1>POC DRAG AND DROP MAP</h1>
-</div>
+<h2>Contenu du site</h2>
+
+<div class="well">
+	<dl>
+	  <dt>{{vm.titreTachesGulp}}</dt>
+	  <dd>{{vm.texteTachesGulp}}
+	  <a href="https://github.com/ahardouin/maGraine/blob/master/gulpfile.js" target="_blank">Gulpfile</a>
+	  </dd>
+	</dl>
+
+	<dl>
+	  <dt>{{vm.titreJscdoc3}}</dt>
+	  <dd>{{vm.jsdoc3}}
+	  <a href="http://usejsdoc.org/index.html" target="_blank">JSDoc3</a> : 
+	  <a href="https://github.com/ahardouin/maGraine/blob/master/gulpfile.js" target="_blank">Gulpfile</a>
+	  </dd>
+	</dl>
 	
-<div class="simpleDemo row">
-
-    <div class="col-md-12">
-        <div class="row">
-            <div ng-repeat="(listName, list) in vm.models.lists" class="col-md-6">
-                <div  class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">List {{listName}}</h3>
-                    </div>
-                    <div class="panel-body">
-                    	<!-- The dnd-list directive allows to drop elements into it.
-						     The dropped data will be added to the referenced list -->
-						<ul dnd-list="list">
-						    <!-- The dnd-draggable directive makes an element draggable and will
-						         transfer the object that was assigned to it. If an element was
-						         dragged away, you have to remove it from the original list
-						         yourself using the dnd-moved attribute -->
-						    <li ng-repeat="item in list"
-						        dnd-draggable="item"
-						        dnd-moved="list.splice($index, 1)"
-						        dnd-effect-allowed="move"
-						        ng-class="{'selected': vm.models.selected === item}"
-						        >
-						        <div ng-include="item.include"></div>
-						    </li>
-						</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div classs="row">
-	<div class="panel panel-default">
-         <div class="panel-heading">
-             <h3 class="panel-title">Generated Model</h3>
-         </div>
-         <div class="panel-body">
-             <pre class="code">{{vm.modelAsJson}}</pre>
-         </div>
-     </div>
-</div>
-
-<div class="row">
-	<h1><small>POC DRAG AND DROP MAP</small></h1>
-</div>
+	<dl>
+	  <dt>{{vm.titreDndNgInclude}}</dt>
+	  <dd>{{vm.texteDndNgInclude}}
+	  <a href="https://github.com/marceljuenemann/angular-drag-and-drop-lists" target="_blank">angular-drag-and-drop-lists</a> : 
+	  <a ui-sref="{{vm.dndNgInclude}}" >{{vm.dndNgIncludeLabel}}</a>
+	  </dd>
+	</dl>
 	
+</div>
 
 </div>
 
