@@ -5,7 +5,7 @@
     .controller("SideBarCtrl", SideBarCtrl);
 	
 	/**
-	 * @function SideBarCtrl - Controlleur bare de navigation 
+	 * @function SideBarCtrl - Controlleur barre de navigation 
 	 * @param $scope
 	 * @param $controller
 	 * @param $location
@@ -34,8 +34,6 @@
 		 * Fonction qui renvoit true si la page passée en parametre est active
 		 */
 		function isActiveLink(viewLocation) { 
-			console.log("viewLocation : " + viewLocation);
-			console.log("$location.url() : "  + $location.url());
 	        return viewLocation === $location.path();
 	    };
 	}
