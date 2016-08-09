@@ -149,7 +149,7 @@ gulp.task('index', function () {
  * @memberof gulpfile
  */
 gulp.task('watch', function () {
-  gulp.watch(['./app/**/*.html'], ['html']);
+  gulp.watch(['./app/**/*.html', 'index.html'], ['html']);
   gulp.watch(['./app/style/*.css'], ['css']);
   gulp.watch(['./app/**/*.js'], ['js']);
 });
