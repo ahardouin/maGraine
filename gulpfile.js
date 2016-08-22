@@ -21,6 +21,7 @@ var filter = require('gulp-filter');
 var revReplace = require('gulp-rev-replace');
 var debug = require('gulp-debug');
 var jsdoc = require('gulp-jsdoc3');
+var gulpProtractorAngular  = require('gulp-angular-protractor');	
 
 var dist="./dist";
 var dist_app = "./dist/app";
@@ -99,7 +100,7 @@ gulp.task('build', ['clean'], function() {
  */
 gulp.task('connect', ['index'], function() {
   connect.server({
-    livereload: true
+    livereload: false
   });
 });
 
@@ -192,4 +193,23 @@ gulp.task('css', function () {
 gulp.task('docGulpFile', function (cb) {
     gulp.src(['gulpfile.js', './app/**/*.js'], {read: false})
         .pipe(jsdoc(cb));
+});
+
+/**
+ * Tests protractor : lance les tests e2e
+ */
+gulp.task('protractor', ['connect'], function(callback) {
+    gulp.src(['./specs/*_spec.js'])
+        .pipe(gulpProtractorAngular({
+            'configFile': 'protractor.conf.js',
+            'debug': false,
+            'autoStartStopServer': true
+        }))
+        .on('error', function(e) {
+            console.log(e);
+            connect.serverClose();
+        })
+        .on('end', function(e) {
+        	connect.serverClose();
+        });
 });
