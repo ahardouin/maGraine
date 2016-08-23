@@ -23,6 +23,7 @@
 						        dnd-draggable="item"
 						        dnd-moved="list.splice($index, 1)"
 						        dnd-effect-allowed="move"
+						        dnd-selected="vm.models.selected = item"
 						        ng-class="{'selected': vm.models.selected === item}"
 						        >
 						        <div ng-include="item.include"></div>
