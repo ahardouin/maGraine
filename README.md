@@ -1,4 +1,4 @@
-# AngularJs POCS
+# AngularJs POCS test conflit GIT
 
 Projet test angular JS et librairies :  
 Gestion des tâches avec GULP  
