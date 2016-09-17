@@ -1,16 +1,16 @@
-# AngularJs POCS
+# AngularJs POCS TITI
 
 Projet test angular JS et librairies :  
-Gestion des t‚ches avec GULP  
+Gestion des t√¢ches avec GULP  
 Test de la libraire angular-ui-router  
 Test de la librairie angular-drag-and-drop-lists  
 Tests avec protractor
 
-## ClÙner le projet avec GIT
+## Cl√¥ner le projet avec GIT
 
 git clone https://github.com/ahardouin/maGraine.git
 
-## Installer les dÈpendances
+## Installer les d√©pendances
 
 npm install
 
