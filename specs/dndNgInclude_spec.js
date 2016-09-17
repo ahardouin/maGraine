@@ -78,11 +78,10 @@ describe('Test End 2 End - Page DndNgInclude', function() {
 	  
 	  /* does not working */
 	  browser.actions()
-	    .mouseMove(elToDrag, {x: 15, y: 15})
+	    .mouseMove(elToDrag)
 	    .mouseDown()
-	    .mouseUp()
-	    .mouseDown()
-	    .mouseMove(elToDrop, {x: 15, y: 15})
+	    .dragAndDrop(elToDrag, elToDrop)
+	    .moveMove(elToDrop)
 	    .mouseUp().perform();
 	  
 	  
